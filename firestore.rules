@@ -1,0 +1,73 @@
+rules_version = '2';
+
+// قوانین امنیتی Firestore برای «قرآن نور»
+// هر کاربر فقط سند خودش (users/{uid}) را می‌خواند و می‌نویسد، آن هم فقط با ساختار مجاز.
+// همه‌چیز دیگر (و لیست‌کردن کاربران) بسته است.
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function signedIn() {
+      return request.auth != null;
+    }
+    function isOwner(uid) {
+      return signedIn() && request.auth.uid == uid;
+    }
+
+    function validPrefs(p) {
+      return p is map
+        && p.keys().hasOnly(['theme', 'fontSize', 'showTr', 'showTj', 'audioSpeed', 'audioRepeat', 'qari'])
+        && (!('theme' in p)       || (p.theme is string && p.theme.size() <= 10))
+        && (!('fontSize' in p)    || (p.fontSize is number && p.fontSize >= 18 && p.fontSize <= 40))
+        && (!('showTr' in p)      || p.showTr is bool)
+        && (!('showTj' in p)      || p.showTj is bool)
+        && (!('audioSpeed' in p)  || (p.audioSpeed is number && p.audioSpeed >= 0.5 && p.audioSpeed <= 2))
+        && (!('audioRepeat' in p) || p.audioRepeat is bool)
+        && (!('qari' in p)        || (p.qari is string && p.qari.size() <= 40));
+    }
+
+    function validLastRead(l) {
+      return l == null
+        || (l is map
+            && l.keys().hasOnly(['surah', 'ayah', 'at', 'visits'])
+            && l.surah is number && l.surah >= 1 && l.surah <= 114
+            && (!('ayah' in l) || (l.ayah is number && l.ayah >= 1 && l.ayah <= 286))
+            && (!('at' in l) || l.at is number));
+    }
+
+    function validUserDoc(d) {
+      return d.keys().hasOnly(['email', 'bookmarks', 'prefs', 'lastRead', 'readHistory', 'updatedAt'])
+        && (!('email' in d)       || (d.email is string && d.email.size() <= 254 && d.email == request.auth.token.email))
+        && (!('bookmarks' in d)   || (d.bookmarks is list && d.bookmarks.size() <= 500))
+        && (!('prefs' in d)       || validPrefs(d.prefs))
+        && (!('lastRead' in d)    || validLastRead(d.lastRead))
+        && (!('readHistory' in d) || (d.readHistory is list && d.readHistory.size() <= 114))
+        && (!('updatedAt' in d)   || d.updatedAt is number);
+    }
+
+    match /users/{uid} {
+      allow get:    if isOwner(uid);
+      allow list:   if false;
+      allow create: if isOwner(uid) && validUserDoc(request.resource.data);
+      allow update: if isOwner(uid) && validUserDoc(request.resource.data);
+      allow delete: if isOwner(uid);
+    }
+
+    // متن آیات و فهرست قاری‌ها: محتوای عمومی، برای همه قابل خواندن.
+    // نوشتن فقط از طریق Admin SDK (اسکریپت import، یا کنسول Firebase) انجام می‌شود —
+    // Admin SDK این قوانین را دور می‌زند، پس «write: if false» یعنی هیچ کاربری از
+    // داخل خود برنامه نمی‌تواند این داده‌ها را تغییر بدهد.
+    match /surahs/{surahId} {
+      allow read: if true;
+      allow write: if false;
+    }
+    match /reciters/{reciterId} {
+      allow read: if true;
+      allow write: if false;
+    }
+
+    // هر مسیر دیگری: کاملاً بسته
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

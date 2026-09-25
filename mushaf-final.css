@@ -1,0 +1,297 @@
+/* ============================================================
+   ظاهر تیره‌ی صفحه‌ی قرائت (منتقل‌شده از desktop.css)
+   ------------------------------------------------------------
+   desktop.css حذف شد (برنامه فقط برای گوشی است)، اما این بخش از آن فایل
+   بیرون از هر @media بود و ظاهر واقعیِ گوشی را می‌ساخت؛ پس عیناً و در همان
+   جای ترتیب استایل‌ها (بعد از styles.css، قبل از باقی mushaf-final) اینجا آمد.
+   ============================================================ */
+:root,html[data-theme="dark"],[data-theme="dark"] {
+  --bg-0:#17191c;
+  --bg-1:#1d2024;
+  --bg-2:#24282d;
+  --bg-3:#2b3036;
+  --camel-900:#343a40;
+  --camel-700:#a6adb5;
+  --camel-500:#c7ad78;
+  --camel-300:#d9dce0;
+  --camel-100:#f4f2ed;
+  --bg:#17191c;
+  --bg-elevated:#1d2024;
+  --bg-card:#24282d;
+  --border:rgba(255,255,255,.09);
+  --border-strong:rgba(255,255,255,.15);
+  --text:#f4f2ed;
+  --text-soft:#d9dce0;
+  --text-muted:#a6adb5;
+  --ink:#f4f2ed;
+  --ink-soft:#d9dce0;
+  --accent:#c7ad78;
+  --gold:#d9dce0;
+  --gold-light:#f4f2ed;
+}
+html,body {
+  background:#17191c !important;
+  background-image:none !important;
+}
+#view-reader,#view-reader .scroll-reader {
+  background:#17191c !important;
+  background-image:none !important;
+}
+#view-reader .paper-page {
+  background:transparent !important;
+  background-image:none !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  max-width:760px;
+  margin:0 auto !important;
+  padding:30px 22px 150px;
+}
+#view-reader .paper-page::before,#view-reader .paper-page::after {
+  content:none !important;
+  display:none !important;
+}
+#view-reader .continuous-text {
+  background:transparent !important;
+  background-image:none !important;
+  border:0 !important;
+  border-radius:0 !important;
+  box-shadow:none !important;
+  color:#f4f2ed !important;
+  text-align:center !important;
+  text-align-last:center !important;
+  padding:0 !important;
+  margin:0 auto !important;
+  width:100%;
+}
+#view-reader .basmala-block {
+  text-align:center !important;
+  text-align-last:center !important;
+  color:#f4f2ed !important;
+  margin:22px auto 30px !important;
+}
+#view-reader .ayah-wrap {
+  text-align:inherit;
+}
+#view-reader .ayah-num-badge {
+  color:#c7ad78 !important;
+  background:transparent !important;
+  border-color:rgba(199,173,120,.42) !important;
+  box-shadow:none !important;
+}
+#view-reader .ayah-wrap.playing {
+  background:rgba(199,173,120,.09) !important;
+  border-radius:8px;
+}
+#view-reader .ayah-tr-inline,#view-reader .translation,#view-reader .ayah-translation {
+  color:#c3c8ce !important;
+  text-align:center !important;
+}
+#view-reader .reader-top {
+  background:#1d2024 !important;
+  border-color:rgba(255,255,255,.09) !important;
+}
+#view-reader .reader-play-bar,#view-reader .audio-bar {
+  background:#1d2024 !important;
+  border-color:rgba(255,255,255,.10) !important;
+  box-shadow:0 -5px 18px rgba(0,0,0,.16) !important;
+}
+#view-reader button,#view-reader .icon-btn {
+  box-shadow:none;
+}
+
+/* ============================================================
+   mushaf-final.css — آخرین لایه‌ی رنگ صفحه‌ی خواندن قرآن (#view-reader)
+   ------------------------------------------------------------
+   آخرین فایل CSS است که لود می‌شود، پس هر قانونی این‌جا برای همان
+   selector روی styles.css و desktop.css هم برنده است. فقط ظاهر
+   صفحه‌ی خواندن (#view-reader) را این‌جا تغییر دهید تا بقیه‌ی صفحات
+   دست‌نخورده بمانند.
+
+   این نسخه، صفحه‌ی خواندن را به‌شکل یک «مصحف» واقعی (کاغذ کِرِم‌رنگ،
+   جوهر تیره، شمارهٔ آیه در یک نگین طلایی، بسم‌الله به رنگ زرشکی)
+   نمایش می‌دهد؛ نوار بالا/پایین صفحه همچنان تیره می‌مانند (هماهنگ با
+   بقیه‌ی برنامه) — فقط خودِ کاغذ روشن است، دقیقاً مثل یک مصحف چاپی
+   که زیر نور کم هم صفحه‌اش روشن می‌ماند.
+
+   نکته: چون در styles.css/desktop.css ده‌ها بار همین selectorها با
+   !important بازتعریف شده بودند (باقیمانده از نسخه‌های قبلی)، همه‌ی
+   قانون‌های زیر هم !important دارند تا مطمئناً برنده شوند — این تنها
+   راه امن بدون پاک کردن دستی ده‌ها قانون قدیمی و پرخطر بود.
+   ============================================================ */
+
+:root {
+  --mushaf-page: #f7efd7;
+  --mushaf-page-end: #f1e6c8;
+  --mushaf-ink: #2a2118;
+  --mushaf-maroon: #8a2f2b;
+  --mushaf-gold: #ab8a4c;
+  --mushaf-gold-soft: rgba(171, 138, 76, 0.4);
+}
+
+/* ── کاغذ ── */
+#view-reader .paper-page {
+  background: radial-gradient(ellipse 90% 30% at 50% 0%, rgba(255, 255, 255, 0.5), transparent 60%),
+    linear-gradient(180deg, var(--mushaf-page) 0%, var(--mushaf-page-end) 100%) !important;
+  background-color: var(--mushaf-page) !important;
+  border: 1px solid rgba(138, 111, 60, 0.28) !important;
+  box-shadow: 0 8px 30px rgba(30, 22, 10, 0.22), inset 0 0 0 1px rgba(255, 255, 255, 0.25) !important;
+  color: var(--mushaf-ink) !important;
+}
+#view-reader .paper-page::before,
+#view-reader .paper-page::after {
+  content: '' !important;
+  display: block !important;
+  position: absolute !important;
+  border-radius: inherit !important;
+  pointer-events: none !important;
+}
+#view-reader .paper-page::before {
+  inset: 12px !important;
+  border: 1px solid rgba(138, 111, 60, 0.22) !important;
+  background: none !important;
+}
+#view-reader .paper-page::after {
+  inset: 17px !important;
+  border: 1px solid rgba(138, 111, 60, 0.12) !important;
+  background: none !important;
+}
+
+/* ── کتیبهٔ نام سوره (مثل سرلوح مصحف چاپی) ── */
+#view-reader .surah-banner {
+  position: relative !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  gap: 10px !important;
+  margin: 4px auto 22px !important;
+  padding: 12px 14px !important;
+  max-width: 100% !important;
+  border: 1.5px solid var(--mushaf-gold) !important;
+  border-radius: 10px !important;
+  background: linear-gradient(180deg, rgba(171, 138, 76, 0.09), rgba(171, 138, 76, 0.02)) !important;
+  box-shadow: none !important;
+}
+#view-reader .surah-banner::before {
+  content: '' !important;
+  position: absolute !important;
+  inset: 4px !important;
+  border: 1px solid var(--mushaf-gold-soft) !important;
+  border-radius: 6px !important;
+  pointer-events: none !important;
+}
+#view-reader .surah-banner-orn {
+  flex: 0 0 auto !important;
+  color: var(--mushaf-gold) !important;
+  -webkit-text-fill-color: var(--mushaf-gold) !important;
+  font-family: sans-serif !important;
+  font-size: 15px !important;
+  opacity: 0.8 !important;
+}
+#view-reader .surah-banner-text {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  color: var(--mushaf-maroon) !important;
+  -webkit-text-fill-color: var(--mushaf-maroon) !important;
+  font-family: 'Amiri Quran', 'Amiri', serif !important;
+  font-size: clamp(19px, 6vw, 27px) !important;
+  line-height: 1.5 !important;
+  text-align: center !important;
+  text-shadow: none !important;
+}
+
+/* ── متن پیوستهٔ آیات ── */
+#view-reader .continuous-text {
+  background: transparent !important;
+  background-image: none !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  color: var(--mushaf-ink) !important;
+  -webkit-text-fill-color: var(--mushaf-ink) !important;
+  text-shadow: none !important;
+  text-align: justify !important;
+  text-align-last: center !important;
+}
+#view-reader .ayah-wrap {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+#view-reader .continuous-text .q-word,
+#view-reader .ayah-day .ayah-day-ar {
+  color: inherit !important;
+  -webkit-text-fill-color: inherit !important;
+}
+
+/* ── بسم‌الله ── */
+#view-reader .basmala-block {
+  color: var(--mushaf-maroon) !important;
+  -webkit-text-fill-color: var(--mushaf-maroon) !important;
+  text-shadow: none !important;
+  text-align: center !important;
+  text-align-last: center !important;
+}
+#view-reader .basmala-block::after {
+  content: '' !important;
+  display: block !important;
+  width: 96px !important;
+  height: 1.5px !important;
+  margin: 12px auto 0 !important;
+  background: linear-gradient(90deg, transparent, var(--mushaf-gold), transparent) !important;
+  box-shadow: none !important;
+  opacity: 0.75 !important;
+}
+#view-reader .ayah-tr-inline.basmala-translation {
+  color: color-mix(in srgb, var(--mushaf-ink) 72%, transparent) !important;
+  -webkit-text-fill-color: color-mix(in srgb, var(--mushaf-ink) 72%, transparent) !important;
+  opacity: 1 !important;
+}
+
+/* ── نگین شمارهٔ پایان آیه ── */
+#view-reader .ayah-num-badge {
+  background: radial-gradient(circle at 35% 30%, rgba(255, 255, 255, 0.55), rgba(171, 138, 76, 0.12)) !important;
+  border: 1.4px solid var(--mushaf-gold-soft) !important;
+  color: var(--mushaf-maroon) !important;
+  -webkit-text-fill-color: var(--mushaf-maroon) !important;
+  box-shadow: none !important;
+}
+#view-reader .ayah-num-badge:hover {
+  background: rgba(171, 138, 76, 0.22) !important;
+  transform: scale(1.08);
+}
+#view-reader .ayah-wrap.playing {
+  background: rgba(171, 138, 76, 0.14) !important;
+  border-radius: 8px;
+}
+#view-reader .ayah-wrap.playing .ayah-num-badge {
+  background: var(--mushaf-gold) !important;
+  border-color: var(--mushaf-maroon) !important;
+  color: #fffaf0 !important;
+  -webkit-text-fill-color: #fffaf0 !important;
+  box-shadow: 0 0 0 3px rgba(171, 138, 76, 0.22) !important;
+  transform: scale(1.12);
+}
+#view-reader .ayah-wrap.playing .q-word {
+  color: var(--mushaf-ink) !important;
+  -webkit-text-fill-color: var(--mushaf-ink) !important;
+  opacity: 0.68;
+}
+#view-reader .ayah-wrap.playing .q-word.q-word-active {
+  opacity: 1 !important;
+  color: #fffaf0 !important;
+  -webkit-text-fill-color: #fffaf0 !important;
+  background: linear-gradient(180deg, var(--mushaf-gold), var(--mushaf-maroon)) !important;
+  box-shadow: none !important;
+  border-radius: 0.18em;
+}
+
+/* ── ترجمهٔ فارسی (اگر کاربر روشن نگه داشته باشد) ── */
+#view-reader .ayah-tr-inline,
+#view-reader .translation,
+#view-reader .ayah-translation {
+  color: color-mix(in srgb, var(--mushaf-ink) 78%, transparent) !important;
+  -webkit-text-fill-color: color-mix(in srgb, var(--mushaf-ink) 78%, transparent) !important;
+  background: rgba(138, 111, 60, 0.07) !important;
+  border-right-color: var(--mushaf-gold-soft) !important;
+  opacity: 1 !important;
+  text-shadow: none !important;
+}

@@ -1,0 +1,90 @@
+/* ============================================================
+   tajweed.css — رنگ‌های تجوید (باید آخرین فایل CSS باشد)
+   رنگ‌ها برای کاغذ کِرِمی صفحهٔ مصحف انتخاب شده‌اند و از قرارداد رایج
+   قرآن‌های تجویدی دیجیتال پیروی می‌کنند: مدها آبی (هرچه تیره‌تر، کشیده‌تر)،
+   قلقله قرمز، غنّه نارنجی، اخفاء بنفش، اقلاب آبی روشن، ادغام‌ها سبز،
+   حروف خوانده‌نشده خاکستری.
+   ============================================================ */
+:root {
+  --tj-slnt: #8e8e8e;
+  --tj-madd-2: #4b7bec;
+  --tj-madd-j: #2f4fd8;
+  --tj-madd-w: #1f3aa6;
+  --tj-madd-l: #0d1a80;
+  --tj-qal: #d90429;
+  --tj-ghn: #f26a00;
+  --tj-ikh: #9400a8;
+  --tj-ikh-s: #d500b7;
+  --tj-iql: #0a9fd6;
+  --tj-idg-g: #0f8f6f;
+  --tj-idg-b: #3a9400;
+  --tj-idg-s: #4fa800;
+  --tj-idg-m: #b8860b;
+}
+
+.tj-slnt   { color: var(--tj-slnt)   !important; -webkit-text-fill-color: var(--tj-slnt)   !important; }
+.tj-madd-2 { color: var(--tj-madd-2) !important; -webkit-text-fill-color: var(--tj-madd-2) !important; }
+.tj-madd-j { color: var(--tj-madd-j) !important; -webkit-text-fill-color: var(--tj-madd-j) !important; }
+.tj-madd-w { color: var(--tj-madd-w) !important; -webkit-text-fill-color: var(--tj-madd-w) !important; }
+.tj-madd-l { color: var(--tj-madd-l) !important; -webkit-text-fill-color: var(--tj-madd-l) !important; }
+.tj-qal    { color: var(--tj-qal)    !important; -webkit-text-fill-color: var(--tj-qal)    !important; }
+.tj-ghn    { color: var(--tj-ghn)    !important; -webkit-text-fill-color: var(--tj-ghn)    !important; }
+.tj-ikh    { color: var(--tj-ikh)    !important; -webkit-text-fill-color: var(--tj-ikh)    !important; }
+.tj-ikh-s  { color: var(--tj-ikh-s)  !important; -webkit-text-fill-color: var(--tj-ikh-s)  !important; }
+.tj-iql    { color: var(--tj-iql)    !important; -webkit-text-fill-color: var(--tj-iql)    !important; }
+.tj-idg-g  { color: var(--tj-idg-g)  !important; -webkit-text-fill-color: var(--tj-idg-g)  !important; }
+.tj-idg-b  { color: var(--tj-idg-b)  !important; -webkit-text-fill-color: var(--tj-idg-b)  !important; }
+.tj-idg-s  { color: var(--tj-idg-s)  !important; -webkit-text-fill-color: var(--tj-idg-s)  !important; }
+.tj-idg-m  { color: var(--tj-idg-m)  !important; -webkit-text-fill-color: var(--tj-idg-m)  !important; }
+
+/* کلمهٔ در حال تلاوت (زمینهٔ طلایی/زرشکی): رنگ تجوید برای خوانایی سفید-کِرِم شود */
+#view-reader .q-word.q-word-active [class^="tj-"],
+#view-reader .ayah-wrap.playing .q-word.q-word-active [class^="tj-"] {
+  color: #fffaf0 !important;
+  -webkit-text-fill-color: #fffaf0 !important;
+}
+
+/* ── پنجرهٔ راهنمای رنگ‌ها ── */
+#tj-panel { max-height: 86vh; overflow-y: auto; }
+.tj-intro { font-size: 13px; line-height: 1.9; color: var(--text-muted, #bbb); margin: 0 0 12px; }
+.tj-legend { display: flex; flex-direction: column; gap: 8px; margin: 0 0 12px; }
+.tj-row {
+  display: flex; align-items: center; gap: 12px;
+  padding: 8px 10px; border-radius: 12px;
+  background: rgba(245, 241, 234, 0.05);
+  border: 1px solid var(--border, rgba(245, 241, 234, 0.12));
+}
+.tj-sample {
+  flex: 0 0 auto; min-width: 104px; text-align: center;
+  padding: 6px 8px; border-radius: 10px;
+  background: #f7efd7; color: #2a2118; -webkit-text-fill-color: #2a2118;
+  font-size: 24px; line-height: 1.9;
+  font-family: 'Amiri Quran', 'KFGQPC Uthmanic Script HAFS', 'Scheherazade New', 'Noto Naskh Arabic', serif;
+}
+.tj-row-text { min-width: 0; flex: 1; }
+.tj-row-title { font-size: 14px; font-weight: 700; color: var(--text, #f5f1ea); display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.tj-row-count { font-size: 11px; font-weight: 700; padding: 1px 8px; border-radius: 99px; background: rgba(217, 119, 87, 0.18); color: var(--gold-light, #e8dfd3); }
+.tj-row-sub { font-size: 12px; line-height: 1.7; color: var(--text-muted, #bbb); margin-top: 2px; }
+.tj-note { font-size: 12px; line-height: 1.9; color: var(--text-muted, #bbb); border-top: 1px solid var(--border, rgba(245,241,234,.12)); padding-top: 10px; }
+
+/* ── دکمهٔ دوحالتهٔ «با تجوید / بدون تجوید» در تنظیمات ── */
+.tj-mode-row { display: flex; gap: 8px; }
+.tj-mode-btn {
+  flex: 1; padding: 12px 8px; border-radius: 14px; cursor: pointer;
+  font: inherit; font-size: 14px; font-weight: 700;
+  color: var(--text-soft, #e8dfd3);
+  background: rgba(245, 241, 234, 0.05);
+  border: 1.5px solid var(--border-strong, rgba(245, 241, 234, 0.18));
+  transition: background-color .18s, border-color .18s, color .18s;
+}
+.tj-mode-btn.active {
+  color: #211f1e;
+  background: linear-gradient(180deg, #e8dfd3, #d97757);
+  border-color: rgba(217, 119, 87, 0.7);
+}
+.tj-preview {
+  margin-top: 10px; padding: 10px 12px; text-align: center !important; text-align-last: center !important; word-spacing: normal; letter-spacing: 0; border-radius: 12px;
+  background: #f7efd7; color: #2a2118; -webkit-text-fill-color: #2a2118;
+  font-size: 24px; line-height: 2;
+  font-family: 'Amiri Quran', 'KFGQPC Uthmanic Script HAFS', 'Scheherazade New', 'Noto Naskh Arabic', serif;
+}

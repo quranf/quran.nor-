@@ -1,0 +1,12 @@
+{
+  "name": "quran-noor-scripts",
+  "private": true,
+  "version": "1.0.0",
+  "description": "اسکریپت‌های ادمین برای پروژهٔ قرآن نور (وارد کردن داده به Firestore)",
+  "scripts": {
+    "import": "node import-to-firestore.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0"
+  }
+}

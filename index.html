@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>قرآن کریم · نور</title>
+<meta name="description" content="قرائت قرآن کریم با ترجمه فارسی فولادوند، صوت چند قاری، حالت پیوسته، نشانه‌گذاری و جستجوی پیشرفته">
+<meta name="theme-color" content="#1a1918">
+<meta name="color-scheme" content="dark light">
+<!-- امنیت: سیاست محتوا (CSP). هیچ اسکریپت/استایل درون‌خطیِ اجراپذیری مجاز نیست؛ فقط فایل‌های همین سایت و میزبان‌های فهرست‌شده. -->
+<meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://www.gstatic.com https://apis.google.com; style-src 'self' https://fonts.googleapis.com 'unsafe-inline'; style-src-elem 'self' https://fonts.googleapis.com; style-src-attr 'unsafe-inline'; font-src 'self' https://fonts.gstatic.com data:; img-src 'self' data: blob:; media-src 'self' https://cdn.islamic.network https://everyayah.com https://server8.mp3quran.net https://firebasestorage.googleapis.com; connect-src 'self' https://formsubmit.co https://*.googleapis.com https://*.firebaseio.com wss://*.firebaseio.com; frame-src https://*.firebaseapp.com; object-src 'none'; base-uri 'none'; form-action 'self'">
+<meta name="referrer" content="strict-origin-when-cross-origin">
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="dns-prefetch" href="https://cdn.islamic.network">
+<link rel="dns-prefetch" href="https://www.gstatic.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<!-- فونت غیرمسدودکننده -->
+<link id="font-preload" rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Vazirmatn:wght@400;500;600;700&display=swap">
+<script src="boot.js"></script>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Amiri+Quran&family=Vazirmatn:wght@400;500;600;700&display=swap" rel="stylesheet"></noscript>
+<link rel="stylesheet" href="styles.css?v=20260922-home-footer">
+  <link rel="stylesheet" href="mushaf-final.css?v=final1">
+  <link rel="stylesheet" href="tajweed.css?v=tj2">
+</head>
+<body>
+
+<!-- SVG Sprite – یک‌بار تعریف، چندبار استفاده (بهینه‌تر برای عملکرد) -->
+<svg xmlns="http://www.w3.org/2000/svg" style="position:absolute;width:0;height:0;overflow:hidden" aria-hidden="true">
+  <defs>
+    <symbol id="i-gear" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><circle cx="12" cy="12" r="3" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <symbol id="i-back" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M9 18l6-6-6-6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></symbol>
+    <symbol id="i-pause" viewBox="0 0 24 24"><path d="M6 5h4v14H6zm8 0h4v14h-4z"/></symbol>
+    <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M18 6L6 18M6 6l12 12"/></symbol>
+    <symbol id="i-plus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M12 5v14M5 12h14"/></symbol>
+    <symbol id="i-minus" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M5 12h14"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M21 21l-4.35-4.35"/></symbol>
+    <symbol id="i-mic" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 3a3 3 0 0 0-3 3v6a3 3 0 0 0 6 0V6a3 3 0 0 0-3-3z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M19 10v1a7 7 0 0 1-14 0v-1M12 18v3"/></symbol>
+    <!-- Surahs: clean balanced list -->
+    <symbol id="i-list" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="i-menu" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <!-- Juz: refined 2x2 grid -->
+    <symbol id="i-grid" viewBox="0 0 24 24"><rect x="3.5" y="3.5" width="7" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="3.5" width="7" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="3.5" y="13.5" width="7" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="13.5" y="13.5" width="7" height="7" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+    <!-- Bookmarks: classic bookmark ribbon (more appropriate than star) -->
+    <symbol id="i-bookmark" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 3.5h10a1 1 0 0 1 1 1V20.5l-6-3.2-6 3.2V4.5a1 1 0 0 1 1-1z"/></symbol>
+    <symbol id="i-bookmark-f" viewBox="0 0 24 24"><path fill="currentColor" stroke="none" d="M7 3.5h10a1 1 0 0 1 1 1V20.5l-6-3.2-6 3.2V4.5a1 1 0 0 1 1-1z"/></symbol>
+    <symbol id="i-history" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M12 7v5l3.5 2"/></symbol>
+
+    <symbol id="i-copy" viewBox="0 0 24 24"><rect x="9" y="9" width="11" height="11" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M5 15V5a2 2 0 0 1 2-2h10"/></symbol>
+    <symbol id="i-repeat" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M17 1l4 4-4 4"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M3 11V9a4 4 0 014-4h14"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M7 23l-4-4 4-4"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M21 13v2a4 4 0 01-4 4H3"/></symbol>
+    <symbol id="i-learn" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" d="M9 7h7M9 11h7M9 15h4"/></symbol>
+  </defs>
+</svg>
+
+<!-- ════════ LIST ════════ -->
+<div class="view active" id="view-list" role="tabpanel">
+  <div class="view-scroll" id="list-scroll">
+  <header class="header header-home">
+    <div class="brand-logo-wrap" aria-label="نور القرآن">
+      <img class="brand-logo" src="logo.png" alt="لوگوی نور القرآن" decoding="async">
+    </div>
+    <button type="button" class="header-settings" id="btn-settings-home" aria-label="تنظیمات">
+      <svg aria-hidden="true"><use href="#i-gear"/></svg>
+    </button>
+    <div class="search-wrap search-wrap-home">
+      <button type="button" class="search-box search-trigger" id="btn-open-search" aria-label="جستجو در قرآن">
+        <span class="ico"><svg aria-hidden="true"><use href="#i-search"/></svg></span>
+        <span class="search-trigger-text">جستجو</span>
+        <span class="search-mic search-mic-fake" aria-hidden="true">
+          <svg aria-hidden="true"><use href="#i-mic"/></svg>
+        </span>
+      </button>
+    </div>
+  </header>
+  <div class="ayah-day" id="ayah-day" role="button" tabindex="0" aria-label="آیه روز"></div>
+  <div class="list" id="surah-list"></div>
+
+  <!-- ════════ درباره / پانویس صفحهٔ اصلی (مثل quran.com) ════════ -->
+  <footer class="home-footer">
+    <img src="logo.png" alt="لوگوی قرآن نور" class="home-footer-logo" decoding="async">
+    <div class="home-footer-name">قرآن نور</div>
+    <div class="home-footer-tagline">قرائت، ترجمه و رنگ‌آمیزی تجویدی قرآن کریم</div>
+
+    <div class="home-footer-row">
+      <span class="home-footer-label">سازنده</span>
+      <span class="home-footer-value">فردوس صمدی</span>
+    </div>
+
+    <div class="home-footer-divider"></div>
+
+    <dl class="home-footer-sources">
+      <dt>متن قرآن کریم</dt>
+      <dd>رسم‌الخط عثمانی استاندارد، به روایت حفص از عاصم؛ تعداد کل آیات (۶۲۳۶) و مرزهای هر سی جزء مطابق منابع معتبر است.</dd>
+
+      <dt>ترجمهٔ فارسی</dt>
+      <dd>بر پایهٔ سبک ترجمهٔ فولادوند، یکی از ترجمه‌های علمی و معتبر فارسی قرآن کریم.</dd>
+
+      <dt>رنگ‌آمیزی تجوید</dt>
+      <dd>بر پایهٔ احکام تجوید در روایت حفص؛ طراحی و پیاده‌سازی اختصاصی همین برنامه.</dd>
+
+      <dt>تلاوت صوتی</dt>
+      <dd>از سرویس‌های عمومی پخش قرآن: cdn.islamic.network، everyayah.com و mp3quran.net.</dd>
+    </dl>
+
+    <p class="home-footer-disclaimer">این برنامه یک پروژهٔ مستقل و غیرانتفاعی (پروژهٔ نمایشگاه علمی) است و وابسته به هیچ سازمان یا ناشر رسمی نیست. در صورت مشاهدهٔ هرگونه خطا در متن یا ترجمه، از بخش «تنظیمات ← گزارش مشکل» اطلاع دهید.</p>
+
+    <div class="home-footer-version">قرآن نور · نسخهٔ ۱۴۰۵</div>
+  </footer>
+  </div>
+<nav class="nav" role="tablist" aria-label="منوی اصلی">
+    <button class="active" data-tab="list" role="tab" aria-selected="true" aria-controls="view-list"><span class="ico"><svg aria-hidden="true"><use href="#i-list"/></svg></span>سوره‌ها</button>
+    <button data-tab="juz" role="tab" aria-selected="false" aria-controls="view-juz"><span class="ico"><svg aria-hidden="true"><use href="#i-grid"/></svg></span>جزء</button>
+    <button data-tab="learn" role="tab" aria-selected="false" aria-controls="view-learn"><span class="ico"><svg aria-hidden="true"><use href="#i-learn"/></svg></span>پیشرفت</button>
+    <button data-tab="marks" role="tab" aria-selected="false" aria-controls="view-marks"><span class="ico"><svg aria-hidden="true"><use href="#i-bookmark"/></svg></span>نشانه‌ها</button>
+  </nav>
+</div>
+
+<!-- ════════ SEARCH PAGE (مثل گوگل) ════════ -->
+<div class="search-page" id="search-page" aria-hidden="true">
+  <div class="search-page-bar">
+    <button type="button" class="search-page-back" id="btn-search-back" aria-label="بازگشت">
+      <svg aria-hidden="true"><use href="#i-back"/></svg>
+    </button>
+    <div class="search-box search-box-page">
+      <span class="ico"><svg aria-hidden="true"><use href="#i-search"/></svg></span>
+      <input type="search" id="search" maxlength="100" placeholder="جستجوی سوره، آیه یا ترجمه..." autocomplete="off" aria-label="جستجو در قرآن" enterkeyhint="search">
+      <button type="button" class="search-mic" id="btn-search-mic" aria-label="جستجوی صوتی" title="جستجوی صوتی">
+        <svg aria-hidden="true"><use href="#i-mic"/></svg>
+      </button>
+    </div>
+  </div>
+  <div class="search-page-body">
+    <div class="ai-suggest" id="ai-suggest">
+      <div class="ai-suggest-section" id="ai-recent-wrap" style="display:none">
+        <div class="ai-suggest-title">جستجوهای اخیر</div>
+        <div class="ai-chips" id="ai-recent"></div>
+      </div>
+      <div class="ai-suggest-section">
+        <div class="ai-suggest-title">پیشنهاد هوشمند</div>
+        <div class="ai-chips" id="ai-quick"></div>
+      </div>
+      <div class="ai-suggest-section">
+        <div class="ai-suggest-title">سوره‌های پیشنهادی</div>
+        <div class="ai-surahs" id="ai-surahs"></div>
+      </div>
+    </div>
+    <div class="search-results" id="search-results" style="display:none"></div>
+    <div class="list" id="search-surah-list"></div>
+  </div>
+</div>
+
+<!-- ════════ JUZ ════════ -->
+<div class="view" id="view-juz" role="tabpanel">
+  <header class="header">
+    <h1>اجزا</h1>
+    <p>۳۰ جزء قرآن کریم</p>
+  </header>
+  <div class="list" id="juz-list"></div>
+<nav class="nav" role="tablist" aria-label="منوی اصلی">
+    <button data-tab="list" role="tab" aria-selected="false" aria-controls="view-list"><span class="ico"><svg aria-hidden="true"><use href="#i-list"/></svg></span>سوره‌ها</button>
+    <button class="active" data-tab="juz" role="tab" aria-selected="true" aria-controls="view-juz"><span class="ico"><svg aria-hidden="true"><use href="#i-grid"/></svg></span>جزء</button>
+    <button data-tab="learn" role="tab" aria-selected="false" aria-controls="view-learn"><span class="ico"><svg aria-hidden="true"><use href="#i-learn"/></svg></span>پیشرفت</button>
+    <button data-tab="marks" role="tab" aria-selected="false" aria-controls="view-marks"><span class="ico"><svg aria-hidden="true"><use href="#i-bookmark"/></svg></span>نشانه‌ها</button>
+  </nav>
+</div>
+
+<!-- ════════ LEARN + HISTORY / پیشرفت ════════ -->
+<div class="view" id="view-learn" role="tabpanel">
+  <header class="header">
+    <h1>پیشرفت</h1>
+    <p>سابقه مطالعه و مسیر یادگیری</p>
+  </header>
+  <div class="learn-body" id="learn-body">
+
+    <div class="learn-section">
+      <h2 class="learn-section-title">سابقه مطالعه</h2>
+      <div class="history-body" id="history-body"></div>
+    </div>
+
+    <div class="learn-section">
+      <h2 class="learn-section-title">شروع از سوره‌های کوتاه</h2>
+      <div class="learn-path" id="learn-path"></div>
+    </div>
+
+    <div class="learn-section">
+      <h2 class="learn-section-title">چطور یاد بگیری</h2>
+      <div class="learn-tip">
+        <div class="learn-tip-ico">۱</div>
+        <div class="learn-tip-body">
+          <div class="learn-tip-title">بشنو</div>
+          <div class="learn-tip-text">با قاری مشاری پخش کن تا کلمات هایلایت شوند و تلفظ را دنبال کنی.</div>
+        </div>
+      </div>
+      <div class="learn-tip">
+        <div class="learn-tip-ico">۲</div>
+        <div class="learn-tip-body">
+          <div class="learn-tip-title">تکرار کن</div>
+          <div class="learn-tip-text">دکمه تکرار آیه را روشن کن و سرعت را روی ۰٫۷۵ بگذار تا واضح‌تر بشنوی.</div>
+        </div>
+      </div>
+      <div class="learn-tip">
+        <div class="learn-tip-ico">۳</div>
+        <div class="learn-tip-body">
+          <div class="learn-tip-title">همراه بخوان</div>
+          <div class="learn-tip-text">روی شماره آیه بزن، ترجمه را ببین و آرام همراه قاری تکرار کن.</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+<nav class="nav" role="tablist" aria-label="منوی اصلی">
+    <button data-tab="list" role="tab" aria-selected="false" aria-controls="view-list"><span class="ico"><svg aria-hidden="true"><use href="#i-list"/></svg></span>سوره‌ها</button>
+    <button data-tab="juz" role="tab" aria-selected="false" aria-controls="view-juz"><span class="ico"><svg aria-hidden="true"><use href="#i-grid"/></svg></span>جزء</button>
+    <button class="active" data-tab="learn" role="tab" aria-selected="true" aria-controls="view-learn"><span class="ico"><svg aria-hidden="true"><use href="#i-learn"/></svg></span>پیشرفت</button>
+    <button data-tab="marks" role="tab" aria-selected="false" aria-controls="view-marks"><span class="ico"><svg aria-hidden="true"><use href="#i-bookmark"/></svg></span>نشانه‌ها</button>
+  </nav>
+</div>
+
+<!-- ════════ BOOKMARKS ════════ -->
+<div class="view" id="view-marks" role="tabpanel">
+  <header class="header">
+    <h1>نشانه‌ها</h1>
+    <p>سوره‌های ذخیره‌شده</p>
+  </header>
+  <div class="list" id="mark-list"></div>
+<nav class="nav" role="tablist" aria-label="منوی اصلی">
+    <button data-tab="list" role="tab" aria-selected="false" aria-controls="view-list"><span class="ico"><svg aria-hidden="true"><use href="#i-list"/></svg></span>سوره‌ها</button>
+    <button data-tab="juz" role="tab" aria-selected="false" aria-controls="view-juz"><span class="ico"><svg aria-hidden="true"><use href="#i-grid"/></svg></span>جزء</button>
+    <button data-tab="learn" role="tab" aria-selected="false" aria-controls="view-learn"><span class="ico"><svg aria-hidden="true"><use href="#i-learn"/></svg></span>پیشرفت</button>
+    <button class="active" data-tab="marks" role="tab" aria-selected="true" aria-controls="view-marks"><span class="ico"><svg aria-hidden="true"><use href="#i-bookmark"/></svg></span>نشانه‌ها</button>
+  </nav>
+</div>
+
+<!-- ════════ READER ════════ -->
+<div class="view" id="view-reader">
+  <div class="reader-top" id="reader-top">
+    <div class="reader-side left">
+      <button class="icon-btn" id="btn-back" title="بازگشت" aria-label="بازگشت">
+        <svg aria-hidden="true"><use href="#i-back"/></svg>
+      </button>
+    </div>
+    <div class="title-block">
+      <div class="surah-name" id="reader-surah-name"></div>
+      <div class="progress" id="reader-progress"></div>
+    </div>
+    <div class="reader-side right">
+      <div class="reader-menu-wrap">
+        <button type="button" class="reader-menu-btn" id="btn-reader-menu" aria-label="منوی بیشتر" aria-expanded="false" aria-controls="reader-menu" title="بیشتر">
+          <svg aria-hidden="true"><use href="#i-menu"/></svg>
+        </button>
+        <div class="reader-menu" id="reader-menu" role="menu" aria-hidden="true">
+          <button type="button" class="reader-menu-item" id="reader-menu-settings" role="menuitem">
+            <span class="menu-ico"><svg aria-hidden="true"><use href="#i-gear"/></svg></span>
+            <span class="menu-label">تنظیمات</span>
+          </button>
+          <button type="button" class="reader-menu-item" id="reader-menu-copy" role="menuitem">
+            <span class="menu-ico"><svg aria-hidden="true"><use href="#i-copy"/></svg></span>
+            <span class="menu-label">کپی</span>
+          </button>
+          <button type="button" class="reader-menu-item" id="reader-menu-jump" role="menuitem">
+            <span class="menu-ico"><svg aria-hidden="true"><use href="#i-search"/></svg></span>
+            <span class="menu-label">پرش به آیه</span>
+          </button>
+          <button type="button" class="reader-menu-item" id="reader-menu-mark" role="menuitem">
+            <span class="menu-ico"><svg aria-hidden="true"><use href="#i-bookmark"/></svg></span>
+            <span class="menu-label">نشانه</span>
+            <span class="menu-state" id="reader-menu-mark-state"></span>
+          </button>
+          <button type="button" class="reader-menu-item" id="reader-menu-translation" role="menuitem">
+            <span class="menu-ico"><span style="font-size:13px;font-weight:800">تر</span></span>
+            <span class="menu-label" id="reader-menu-translation-label">ترجمه</span>
+          </button>
+          <button type="button" class="reader-menu-item" id="reader-menu-tajweed" role="menuitem">
+            <span class="menu-ico"><span style="font-size:13px;font-weight:800">تج</span></span>
+            <span class="menu-label" id="reader-menu-tajweed-label">رنگ‌های تجوید</span>
+          </button>
+          <button type="button" class="reader-menu-item" id="reader-menu-tj-legend" role="menuitem">
+            <span class="menu-ico"><span style="font-size:13px;font-weight:800">؟</span></span>
+            <span class="menu-label">راهنمای رنگ‌های تجوید</span>
+          </button>
+          <button type="button" class="reader-menu-item" id="reader-menu-report" role="menuitem">
+            <span class="menu-ico"><svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 15s1-1 4-1 5 2 8 2 4-1 4-1V3s-1 1-4 1-5-2-8-2-4 1-4 1z"/><line x1="4" y1="22" x2="4" y2="15"/></svg></span>
+            <span class="menu-label">گزارش مشکل یا پیشنهاد</span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- مطالعه پیوسته قرآن -->
+  <div class="scroll-reader" id="scroll-reader"></div>
+
+</div>
+
+<!-- بارگذاری داده‌های قرآن -->
+<div class="loader" id="loader">
+  <div class="spinner"></div>
+  <span>بارگذاری...</span>
+</div>
+
+<!-- نوار پخش سوره – پایین صفحه (همان شکل ثابت نوار صوت) -->
+<div class="reader-play-bar" id="reader-play-bar">
+  <button type="button" class="play-btn" id="btn-play-surah" aria-label="پخش سوره">
+    <svg aria-hidden="true"><use href="#i-play"/></svg>
+  </button>
+  <div class="audio-info">
+    <div class="label">پخش سوره</div>
+    <div class="sub">مشاری راشد العفاسی</div>
+  </div>
+</div>
+
+<!-- Audio bar (هنگام پخش) -->
+<div class="audio-bar" id="audio-bar">
+  <button class="play-btn" id="audio-play" aria-label="پخش/توقف">
+    <svg class="ico-play" aria-hidden="true"><use href="#i-play"/></svg>
+    <svg class="ico-pause" aria-hidden="true"><use href="#i-pause"/></svg>
+  </button>
+  <div class="audio-info">
+    <div class="label" id="audio-label">تلاوت</div>
+    <div class="sub" id="audio-sub">مشاری راشد العفاسی</div>
+  </div>
+  <div class="audio-controls">
+    <button type="button" class="audio-ctrl" id="audio-speed" aria-label="سرعت پخش" title="سرعت">۱×</button>
+    <button type="button" class="audio-ctrl" id="audio-repeat" aria-label="تکرار آیه" title="تکرار">
+      <svg aria-hidden="true" width="16" height="16"><use href="#i-repeat"/></svg>
+    </button>
+  </div>
+  <button class="audio-close" id="audio-close" aria-label="بستن پخش">
+    <svg aria-hidden="true"><use href="#i-close"/></svg>
+  </button>
+</div>
+<audio id="audio-el" preload="metadata" playsinline webkit-playsinline></audio>
+
+<!-- ════════ SETTINGS (صفحه‌ی جدا، مثل بقیه‌ی صفحات برنامه) ════════ -->
+<div class="overlay" id="overlay"></div>
+<div class="view" id="view-settings">
+  <div class="reader-top" id="settings-top">
+    <div class="reader-side left">
+      <button class="icon-btn" id="btn-settings-back" title="بازگشت" aria-label="بازگشت">
+        <svg aria-hidden="true"><use href="#i-back"/></svg>
+      </button>
+    </div>
+    <div class="title-block">
+      <div class="surah-name">تنظیمات مطالعه</div>
+    </div>
+    <div class="reader-side right"></div>
+  </div>
+  <div class="view-scroll" id="settings-scroll">
+  <div class="settings-page-body">
+
+  <div class="setting-group" id="account-section">
+    <div class="setting-label">حساب کاربری</div>
+    <div id="account-logged-out">
+      <p style="font-size:13px;color:var(--text-muted);margin:0 0 12px;line-height:1.6">با ورود به حساب، نشانه‌ها و پیشرفت مطالعه شما برای این ایمیل ذخیره می‌شود.</p>
+      <button type="button" class="support-btn" id="btn-open-login" style="width:100%">ورود / ثبت‌نام با ایمیل</button>
+    </div>
+    <div id="account-logged-in" style="display:none">
+      <div class="account-info">
+        <div class="account-avatar" id="account-avatar">؟</div>
+        <div style="min-width:0;flex:1">
+          <div class="account-email-display" id="account-email"></div>
+          <div style="font-size:12px;color:var(--text-muted);margin-top:2px">وارد شده‌اید</div>
+        </div>
+      </div>
+      <button type="button" class="support-btn secondary" id="btn-logout" style="width:100%;margin-top:12px">خروج از حساب</button>
+    </div>
+  </div>
+
+  <div class="setting-group">
+    <div class="setting-label">حالت نمایش</div>
+    <div class="theme-row">
+      <button class="theme-btn" data-theme="dark">تاریک</button>
+    </div>
+  </div>
+
+  <div class="setting-group">
+    <div class="setting-label">اندازهٔ متن عربی</div>
+    <div class="slider-row">
+      <button id="set-font-down" aria-label="کوچک‌تر">
+        <svg aria-hidden="true"><use href="#i-minus"/></svg>
+      </button>
+      <div class="slider-val" id="font-val">۲۶</div>
+      <button id="set-font-up" aria-label="بزرگ‌تر">
+        <svg aria-hidden="true"><use href="#i-plus"/></svg>
+      </button>
+    </div>
+  </div>
+
+  <div class="setting-group">
+    <div class="toggle-row">
+      <span>نمایش ترجمه</span>
+      <div class="toggle" id="toggle-tr"></div>
+    </div>
+  </div>
+
+  <div class="setting-group" id="tj-setting">
+    <div class="setting-label">رنگ‌های تجوید در متن قرآن</div>
+    <div class="tj-mode-row" role="group" aria-label="رنگ‌های تجوید">
+      <button type="button" class="tj-mode-btn" id="tj-mode-off" data-tj="off">بدون تجوید (ساده)</button>
+      <button type="button" class="tj-mode-btn" id="tj-mode-on" data-tj="on">با تجوید (رنگی)</button>
+    </div>
+    <div class="tj-preview" id="tj-preview" dir="rtl"></div>
+    <button type="button" class="chip" id="btn-tj-legend" style="width:100%;justify-content:center;margin-top:10px">راهنمای رنگ‌ها و احکام</button>
+  </div>
+
+  <div class="setting-group">
+    <div class="setting-label">قاری</div>
+    <div class="qari-list" id="qari-list">
+      <!-- filled by JS -->
+    </div>
+  </div>
+
+  <div class="setting-group" style="margin-top:4px;border-top:1px solid var(--border);padding-top:16px">
+    <div class="setting-label">مدیریت داده‌های محلی</div>
+    <div class="support-box" style="background:transparent;border-color:var(--border)">
+      <p style="margin-bottom:10px">اگر برنامه درست کار نمی‌کند، داده‌های ذخیره‌شده روی این دستگاه را پاک کنید.</p>
+      <div class="support-actions">
+        <button type="button" class="support-btn secondary" id="btn-clear-cache" style="border-color:var(--maroon);color:var(--maroon)">پاک کردن داده‌های محلی</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="setting-group" style="margin-top:8px;border-top:1px solid var(--border);padding-top:16px">
+    <button class="chip" id="btn-report-open" style="width:100%;justify-content:center;padding:12px 16px">
+      گزارش مشکل یا پیشنهاد
+    </button>
+  </div>
+
+  </div>
+  </div>
+</div>
+
+<!-- راهنمای رنگ‌های تجوید -->
+<div class="settings-panel" id="tj-panel">
+  <div class="panel-handle" id="tj-handle"></div>
+  <div class="panel-title">راهنمای رنگ‌های تجوید</div>
+  <p class="tj-intro">رنگ هر حرف از روی قواعد تجوید روایت حفص از عاصم و حرف بعدی که خوانده می‌شود تعیین می‌شود. پایان هر آیه «وقف» حساب شده است (مثلاً مد عارض و قلقلهٔ کبری).</p>
+  <div class="tj-legend" id="tj-legend"></div>
+  <p class="tj-note">حروف خوانده‌نشده (خاکستری) همان‌هایی‌اند که هنگام ادامه دادن (وصل) خوانده نمی‌شوند؛ اگر از ابتدای آیه شروع کنید همزهٔ وصل خوانده می‌شود. برای یادگیری دقیق، همیشه با معلم قرآن یا مصحف تجویدی چاپی تطبیق دهید.</p>
+  <div class="report-actions">
+    <button type="button" class="chip primary" id="btn-tj-close">بستن</button>
+  </div>
+</div>
+
+<!-- Report problem panel (like quran.com feedback) -->
+<div class="settings-panel" id="report-panel">
+  <div class="panel-handle" id="report-handle"></div>
+  <div class="panel-title">
+    گزارش مشکل
+  </div>
+  <p class="report-hint">اگر در متن عربی، ترجمه، صوت یا هر قسمت دیگری اشتباهی دیدید، لطفاً برایمان بنویسید.</p>
+
+  <div class="setting-group">
+    <div class="setting-label">موضوع</div>
+    <div class="report-types">
+      <button type="button" class="report-type active" data-type="text">متن عربی</button>
+      <button type="button" class="report-type" data-type="translation">ترجمه</button>
+      <button type="button" class="report-type" data-type="audio">صوت</button>
+      <button type="button" class="report-type" data-type="other">سایر</button>
+    </div>
+  </div>
+
+  <div class="setting-group">
+    <div class="setting-label">موقعیت (اختیاری)</div>
+    <input type="text" id="report-context" class="report-input" placeholder="" dir="rtl" autocomplete="off" maxlength="200">
+  </div>
+
+  <div class="setting-group">
+    <div class="setting-label">توضیح مشکل</div>
+    <textarea id="report-message" class="report-textarea" rows="4" maxlength="1000" placeholder="مشکل را به‌طور خلاصه بنویسید..." dir="rtl"></textarea>
+    <input type="text" id="report-hp" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+  </div>
+
+  <div class="report-actions">
+    <button type="button" class="chip" id="btn-report-cancel">انصراف</button>
+    <button type="button" class="chip primary" id="btn-report-send">ارسال گزارش</button>
+  </div>
+</div>
+
+<!-- Jump-to-ayah panel: opened from the reader menu, jumps within the surah currently open -->
+<div class="settings-panel" id="jump-panel">
+  <div class="panel-handle" id="jump-handle"></div>
+  <div class="panel-title" id="jump-panel-title">
+    پرش به آیه
+  </div>
+  <p class="report-hint" id="jump-panel-hint"></p>
+
+  <div class="setting-group">
+    <div class="setting-label">شماره آیه</div>
+    <input type="text" inputmode="numeric" id="jump-ayah-input" class="report-input" placeholder="مثلاً ۲۵۵" dir="rtl" autocomplete="off">
+    <p class="report-hint" id="jump-ayah-error" style="display:none;color:var(--danger,#e5484d)"></p>
+  </div>
+
+  <div class="report-actions">
+    <button type="button" class="chip" id="btn-jump-cancel">انصراف</button>
+    <button type="button" class="chip primary" id="btn-jump-go">برو</button>
+  </div>
+</div>
+
+<!-- Account / Login panel (like quran.com) -->
+<div class="settings-panel" id="account-panel">
+  <div class="panel-handle" id="account-handle"></div>
+  <div class="panel-title" id="account-panel-title">ورود به حساب</div>
+  <p class="report-hint" id="account-panel-hint">با ایمیل واقعی خود وارد شوید تا نشانه‌ها و پیشرفت مطالعه ذخیره شود.</p>
+
+  <div class="login-mode-tabs">
+    <button type="button" class="login-mode-tab active" data-mode="login">ورود</button>
+    <button type="button" class="login-mode-tab" data-mode="signup">ثبت‌نام</button>
+  </div>
+
+  <div class="setting-group">
+    <div class="setting-label">ایمیل</div>
+    <input type="email" id="login-email" class="report-input" placeholder="" dir="ltr" autocomplete="email" inputmode="email" maxlength="254" autocapitalize="none" spellcheck="false">
+  </div>
+
+  <div class="setting-group">
+    <div class="setting-label">رمز عبور</div>
+    <input type="password" id="login-password" class="report-input" placeholder="رمز عبور" dir="ltr" autocomplete="current-password" maxlength="128">
+  </div>
+
+  <div class="login-error" id="login-error" role="alert"></div>
+  <button type="button" class="chip" id="btn-forgot-password" style="margin-top:8px">فراموشی رمز عبور؟</button>
+
+  <div class="report-actions" style="margin-top:16px">
+    <button type="button" class="chip" id="btn-login-cancel">انصراف</button>
+    <button type="button" class="chip primary" id="btn-login-submit">ورود</button>
+  </div>
+
+  <p class="account-note" id="account-note">داده‌ها فقط روی این دستگاه ذخیره می‌شوند.</p>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="tajweed.js?v=tj1" defer></script>
+<script src="app.js?v=20260920-tajweed2" defer></script>
+<script src="smart-header.js?v=1" defer></script>
+
+</body>
+</html>
